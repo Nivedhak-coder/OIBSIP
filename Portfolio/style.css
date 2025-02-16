@@ -179,6 +179,7 @@ li{
 
 .social-media a:hover{
     color: var(--text-color);
+    background:var(--main-color);
 }
 
 
