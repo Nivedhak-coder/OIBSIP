@@ -125,6 +125,11 @@ li{
     box-shadow: var(--drop-shadow);
 }
 
+.main-container .btn:hover{
+    color: black;
+    font-size: large;
+}
+
 
 
 .main-container img{
@@ -157,6 +162,13 @@ li{
     border-radius: 1px;
     box-shadow: var(--drop-shadow);
 }
+
+.main-container1 .btn:hover{
+    color: black;
+    font-size: large;
+}
+    
+
 
 .main-container1 p{
     font-size: 15px;
