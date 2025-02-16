@@ -264,4 +264,10 @@ ul{
 
 }
 
+.footer-col .social-links a:hover{
+    color: white;
+    background-color: #f64d4a;
+   
+}
+
 
