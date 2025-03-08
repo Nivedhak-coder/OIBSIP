@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Convertor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="Convertor">
+        <h2>Temperature Convertor</h2>
+        <!--fromunit -->
+        <label for="fromunit"><b>From:</b></label>
+        <select  id="fromunit">
+            <option value="C">Celsius</option>
+            <option value="F">Fahrenheit</option>
+            <option value="K">Kelvin</option>
+        </select>
+
+
+        <!--tounit-->
+        <label for="tounit"><b>To:</b></label>
+        <select  id="tounit">
+            <option value="C">Celsius</option>
+            <option value="F">Fahrenheit</option>
+            <option value="K">Kelvin</option>
+        </select>
+
+        <!--input-->
+        <input type="number"id="tempInput"placeholder="Enter Temperature">
+        <button onclick="convertTemp()"><b>Convert</b></button>
+        <br>
+        <input type="text"id="result"placeholder="Result"readonly>
+    </div>
+
+
+
+    <!--Javascript-->
+    <script>
+        function convertTemp(){
+            let temp = parseFloat(document.getElementById("tempInput").value);
+            let fromunit = document.getElementById("fromunit").value;
+            let tounit = document.getElementById("tounit").value;
+            let result;
+
+            if (isNaN(temp)){
+                document.getElementById("result").innerText = "Please enter a valid number";
+                return;
+            }
+
+            if (fromunit === tounit){
+                result = temp;
+            } else if (fromunit === "C" && tounit === "F"){
+                result = (temp*9/5) + 32;
+            } else if (fromunit === "C" && tounit === "K"){
+                result = temp+273.15;
+            } else if (fromunit === "F" && tounit === "C"){
+                result = (temp - 32) *5/9;
+            } else if (fromunit === "F" && tounit === "K"){
+                result = (temp-32) *5/9 +273.15;
+            } else if (fromunit === "K" && tounit === "C"){
+                result = temp - 273.15;
+            } else if (fromunit === "K" && tounit === "F"){
+                result = (temp-273.15)*9/5 +32;
+            }
+            document.getElementById("result").value=result.toFixed(2)+""+tounit;
+        }
+    </script>
+</body>
+</html>

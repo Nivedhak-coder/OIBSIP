@@ -1,0 +1,288 @@
+<!--secure.html--> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Agency</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            background-image: url('https://source.unsplash.com/1600x900/?pets,dogs,cats'); 
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Navigation Styles */
+        nav {
+            background-color: rgba(47, 79, 79, 0.9);
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .btn { 
+            padding: 12px 20px; 
+            border-radius: 8px;
+            border: none;
+            font-size: 16px;
+            cursor: pointer; 
+            background: #dc3545;
+            color: white;
+            font-weight: bold;
+            margin-left: 30px;
+        }
+        .btn:hover {
+            background: #b02a37; 
+        }
+        .logo {
+            color: #fff;
+            font-size: 28px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .logo::before {
+            content: "🐾";
+            font-size: 28px;
+            margin-right: 8px;
+        }
+
+        .menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .menu li {
+            margin-left: 20px;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            display: block;
+            font-size: 18px;
+            transition: 0.3s ease;
+        }
+
+        .menu a:hover {
+            background-color: #5f9ea0;
+            border-radius: 5px;
+            transform: scale(1.1);
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .hamburger div {
+            width: 30px;
+            height: 4px;
+            margin: 5px 0;
+            background-color: white;
+            transition: 0.4s;
+        }
+
+        /* Content Section */
+        .content {
+            text-align: center;
+            margin-top: 80px;
+            padding: 20px;
+        }
+
+        .content p {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        /* Pet Adoption Cards */
+        .cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin: 20px;
+            overflow: hidden;
+            width: 300px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card h3 {
+            margin: 15px 0;
+            color: #2f4f4f;
+        }
+
+        .card p {
+            color: #555;
+            padding: 0 10px 15px;
+        }
+
+        .adopt-btn {
+            display: inline-block;
+            background-color: #5f9ea0;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-bottom: 15px;
+        }
+
+        .adopt-btn:hover {
+            background-color: #468b8b;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2f4f4f;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            position: relative;
+            margin-top: 20px;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .menu {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                background-color: rgba(47, 79, 79, 0.9);
+                text-align: center;
+                z-index: 999;
+                transition: 0.3s ease;
+            }
+
+            .menu.active {
+                display: flex;
+            }
+
+            .menu li {
+                width: 100%;
+                margin: 0;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+        }
+
+       
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">Petora</div>
+        <ul class="menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#adopt">Adopt a Pet</a></li>
+            <li><a href="#foster">Foster a Pet</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <button class="btn" onclick="logout()">Logout</button>
+        </ul>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </nav>
+
+    <div class="content">
+        <p>Welcome to Petora! Find your perfect furry companion and give them a loving home. Explore our pets below and start your adoption journey today! 🐶🐱</p>
+    </div>
+
+    <div class="cards-container">
+        <div class="card">
+            <img src="img/dog.jpg" alt="Dog">
+            <h3>Max</h3>
+            <p>Friendly and energetic Labrador looking for a loving home.</p>
+            <a href="#" class="adopt-btn">Adopt Now</a>
+        </div>
+        <div class="card">
+            <img src="img/catimg.jpg" alt="Cat">
+            <h3>Whiskers</h3>
+            <p>Calm and affectionate tabby cat ready for adoption.</p>
+            <a href="#" class="adopt-btn">Adopt Now</a>
+        </div>
+        <div class="card">
+            <img src="img/pupimg.jpg" alt="Puppy">
+            <h3>Bella</h3>
+            <p>Playful and adorable puppy eager for a new family.</p>
+            <a href="#" class="adopt-btn">Adopt Now</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Petora. All Rights Reserved.</p>
+    </footer>
+
+        
+    
+    <script>
+         function toggleMenu() {
+            const menu = document.querySelector('.menu');
+            const hamburger = document.querySelector('.hamburger');
+            menu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+        function checkAuth() {
+            if (!localStorage.getItem("loggedIn")) {
+                alert("Unauthorized access! Redirecting to login.");
+                window.location.href = "login.html";
+            } else {
+                document.getElementById("welcome-msg").innerText = `Welcome, ${localStorage.getItem("currentUser")}, explore the world!`;
+            }
+        }
+        function logout() {
+            localStorage.removeItem("loggedIn");
+            localStorage.removeItem("currentUser");
+            alert("You have logged out.");
+            window.location.href = "login.html";
+        }
+        window.onload = checkAuth;
+    </script>
+</body>
+</html>

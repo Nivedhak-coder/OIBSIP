@@ -1,0 +1,158 @@
+  /* Global Styles */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* Main Section */
+h1 {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.main-container {
+    width: 80%;
+    margin: 50px auto;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.main-container img {
+    max-width: 300px;
+    margin-right: 20px;
+    transition: transform 0.3s ease;
+}
+
+.main-container img:hover {
+    transform: scale(1.05);
+}
+
+.main-container p {
+    font-size: 20px;
+    line-height: 1.8;
+    color: #333;
+    margin-top: 20px;
+    padding: 100px;
+   
+}
+
+/* Career Stats Section */
+#career {
+    background-color: #f4f4f4;
+    padding: 30px 0;
+    text-align: center;
+}
+
+#career h2 {
+    margin-bottom: 20px;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.stat-item {
+    background-color: #fff;
+    padding: 20px;
+    width: 30%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.stat-item h3 {
+    font-size: 24px;
+    color: #3881ba;
+}
+
+.stat-item p {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Achievements Section */
+#achievements {
+    padding: 30px;
+    text-align: center;
+    
+}
+
+#achievements h2 {
+    margin-bottom: 20px;
+}
+
+#achievements ul {
+    list-style: none;
+}
+
+#achievements li {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Fun Facts Section */
+#fun-facts {
+    padding: 60px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+#fun-facts h2 {
+    margin-bottom: 20px;
+}
+
+#fun-facts ul {
+    list-style: none;
+}
+
+#fun-facts li {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+      
